@@ -1,7 +1,12 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
+import "./Reward_Tokens.sol";
+
 contract CrowdFunding {
+
+    Reward_Tokens public reward_tokens;
+
     struct Campaign {
         address owner;
         string title;
@@ -15,13 +20,16 @@ contract CrowdFunding {
     }
 
     mapping(uint256 => Campaign) public campaigns;
-
     uint256 public numberOfCampaigns = 0;
 
-    function createCampaign(address _owner,string memory _title,string memory _description,uint256 _target,uint256 _deadline,string memory _image) public returns (uint256) {
-        Campaign storage campaign = campaigns[numberOfCampaigns];
+    constructor(address _rewardtokenAddress) {
+        reward_tokens = Reward_Tokens(_rewardtokenAddress);
+    }
 
-        require(campaign.deadline < block.timestamp,"The deadline should be a date in the future.");
+    function createCampaign(address _owner,string memory _title,string memory _description,uint256 _target,uint256 _deadline,string memory _image) public returns (uint256) {
+        require(_deadline > block.timestamp,"The deadline should be a date in the future.");
+
+        Campaign storage campaign = campaigns[numberOfCampaigns];
 
         campaign.owner = _owner;
         campaign.title = _title;
@@ -49,6 +57,8 @@ contract CrowdFunding {
         if (sent) {
             campaign.amountCollected = campaign.amountCollected + amount;
         }
+
+        reward_tokens.mint(msg.sender, msg.value * 100);
     }
 
     function getDonators(uint256 _id) view public returns (address[] memory, uint256[] memory){
