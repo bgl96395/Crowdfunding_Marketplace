@@ -17,12 +17,13 @@
             <div id="connect_block">
                 <h2 id="con">Wallet</h2>
                 <h3>Account address:</h3>
-                <p class="a"></p>
+                <p class="a" id="user_address"></p>
                 <h3>ETH balance:</h3>
-                <p class="a"></p>
+                <p class="a" id="ETH_balance"></p>
                 <h3>Token balance:</h3>
-                <p class="a"></p>
-                <button id="connect_wallet">Connect Wallet</button>
+                <p class="a" id="reward_tokens"></p>
+                <button id="connect_wallet" onclick="Connect_Wallet()">Connect Wallet</button>
+                <p id="confirm"></p>
             </div>
         </div>
     </div>
@@ -34,14 +35,21 @@
                 <input type="text" id="title"><br><br>
                 <h3>Description</h3>
                 <input type="text" id="description"><br><br>
+                <h3>Image URL</h3>
+                <input type="text" id="image_url" placeholder="Not required"><br><br>
                 <h3>Target amount</h3>
                 <input type="number" id="amount"><br><br>
                 <h3>Deadline</h3>
                 <input type="date" id="date"> <br><br>
-                <button id="btn_create_campaign">Create Campaign</button>    
+                <button id="btn_create_campaign" type="submit">Create Campaign</button>    
                 <p id="com">Create your Campaign to raise funds</p>   
             </form>
     </div>
+    <hr>
+
+    <h2 id="cam">Campaigns</h2>
+    <div id="campaigns_container"></div>
+   
 
     <div id="footer">
         <div class="card">
@@ -60,5 +68,8 @@
             <p>campaign@camp.com</p>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.16.0/dist/ethers.umd.min.js"></script>
+    <script src="../scripts/index.js"></script>
 </body>
 </html>
