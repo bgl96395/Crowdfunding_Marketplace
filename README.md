@@ -145,22 +145,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 Simply open `frontend/index.html` in your browser or use live server.
 
-## Project Structure
 
-```
-crowd_funding/
-├── contracts/
-│   ├── CrowdFunding.sol       # Main crowdfunding logic
-│   └── Reward_Tokens.sol      # ERC-20 reward token
-├── scripts/
-│   ├── deploy.js              # Deployment script
-│   └── index.js               # Frontend 
-├── frontend/
-│   ├── index.html             # Main page
-│   └── style.css              # Styling
-├── hardhat.config.js          # Hardhat configuration
-└── package.json
-```
 
 ## Smart Contract Functions
 
