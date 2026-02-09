@@ -53,8 +53,8 @@ We created two main contracts:
 ## Installation & Setup
 
 ### Prerequisites
-You need these installed first:
- Node.js (v16 or higher)
+We have installed:
+ Node.js (v16 and higher)
  MetaMask browser extension
  Git
 
@@ -84,7 +84,7 @@ npx hardhat compile
 ```bash
 npx hardhat node
 ```
-This will give you 20 test accounts with 10000 ETH each.
+This will give other people 20 test accounts with 10000 ETH each.
 
 2. Connect MetaMask to local network:
     Network Name: Hardhat Local
@@ -92,7 +92,7 @@ This will give you 20 test accounts with 10000 ETH each.
     Chain ID: 31337
     Currency Symbol: ETH
 
-3. Import one of the test accounts to MetaMask using private key from terminal output
+3. Importing one of the test accounts to MetaMask with private key from terminal 
 
 ### For Campaign Creators:
 
@@ -105,7 +105,7 @@ This will give you 20 test accounts with 10000 ETH each.
     Deadline
     Image URL
 4. Approve transaction in MetaMask
-5. Wait for confirmation - your campaign is live!
+5. Wait for confirmation - your campaign is live
 
 ### For Donors:
 
@@ -143,7 +143,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 ### Open Frontend
 
-Simply open `frontend/index.html` in your browser or use live server.
+Simply we opened `frontend/index.html` in our live server.
 
 
 
@@ -196,7 +196,7 @@ npx hardhat node
 npx hardhat run scripts/deploy.js --network localhost
 ```
 
-3. Copy deployed contract addresses and update frontend
+3. Copying deployed contract addresses and update frontend
 
 ### For Testing on Public Testnet (Optional):
 
@@ -204,8 +204,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 **Note:** 
  We primarily use local Hardhat network for this project
- Never share your private key
- Keep .env file in .gitignore
+
 
 ## Team Contributions
 
@@ -230,41 +229,18 @@ npx hardhat run scripts/deploy.js --network localhost
 ## Challenges We Faced
 
 1. **Understanding async/await in JavaScript** - took time to get web3 interactions working
-2. **Gas optimization** - had to refactor some contract code to reduce gas costs
-3. **MetaMask connection to local network** - configuring network settings and account imports
-4. **Testing time-based functions** - learning to use Hardhat time helpers for deadline tests
-5. **Contract deployment and frontend connection** - keeping track of deployed addresses
-
-## What We Learned
-
- How to write secure smart contracts using Solidity
- ERC-20 token standard implementation
- Setting up and using Hardhat local blockchain
- Deploying and testing contracts locally
- Frontend integration with blockchain
- Writing proper tests for smart contracts
- Working with MetaMask wallet and local networks
- Git collaboration as a team
- Debugging blockchain transactions
+2. **MetaMask connection to local network** - configuring network settings and account imports
+3. **Testing time-based functions** - learning to use Hardhat time helpers for deadline tests
+4. **Contract deployment and frontend connection** - keeping track of deployed addresses
 
 ## Future Improvements
 
 If we had more time, we would add:
- Campaign finalization after deadline
- Refund mechanism if goal not reached
  Campaign categories and search
  User profiles
- Better UI/UX design
+ Better UI/UX design for example we want to use React.js Next.js Vue.js
  Mobile responsive design
 
-## Security Notes
-
- **Important:**
- This is educational project for learning purposes
- Runs on local Hardhat network only
- NOT audited - don't use in production
- Test with local accounts only
- Never expose private keys
 
 ## Resources We Used
 
