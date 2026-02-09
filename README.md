@@ -21,42 +21,42 @@ Our crowdfunding DApp enables project creators to raise capital directly from a 
 We created two main contracts:
 
 **1. CrowdFunding.sol** - Main contract that handles:
-- Creating new campaigns with title, description, goal, deadline
-- Accepting donations from users
-- Sending ETH directly to campaign owner
-- Tracking all donors and donation amounts
-- Minting reward tokens to donors
+ Creating new campaigns with title, description, goal, deadline
+ Accepting donations from users
+ Sending ETH directly to campaign owner
+ Tracking all donors and donation amounts
+ Minting reward tokens to donors
 
 **2. Reward_Tokens.sol** - ERC-20 token contract:
-- Token name: "Reward Tokens" 
-- Symbol: "RWD"
-- Automatically mints tokens when someone donates
-- 1 ETH donation = 100 RWD tokens
-- Only CrowdFunding contract can mint new tokens
+ Token name: "Reward Tokens" 
+ Symbol: "RWD"
+ Automatically mints tokens when someone donates
+ 1 ETH donation = 100 RWD tokens
+ Only CrowdFunding contract can mint new tokens
 
 ### Frontend (HTML/CSS/JavaScript)
-- Connect MetaMask wallet
-- View all active campaigns
-- Create new campaign
-- Donate to campaigns
-- See your token balance
+ Connect MetaMask wallet
+ View all active campaigns
+ Create new campaign
+ Donate to campaigns
+ See your token balance
 
 ## Tech Stack
 
-- Solidity ^0.8.20
-- Hardhat (development environment & local blockchain)
-- OpenZeppelin (for secure ERC-20 implementation)
-- Ethers.js v6 (blockchain interaction)
-- MetaMask (wallet)
-- Node.js
+ Solidity ^0.8.20
+ Hardhat (development environment & local blockchain)
+ OpenZeppelin (for secure ERC-20 implementation)
+ Ethers.js v6 (blockchain interaction)
+ MetaMask (wallet)
+ Node.js
 
 ## Installation & Setup
 
 ### Prerequisites
 You need these installed first:
-- Node.js (v16 or higher)
-- MetaMask browser extension
-- Git
+ Node.js (v16 or higher)
+ MetaMask browser extension
+ Git
 
 ### Steps
 
@@ -87,10 +87,10 @@ npx hardhat node
 This will give you 20 test accounts with 10000 ETH each.
 
 2. Connect MetaMask to local network:
-   - Network Name: Hardhat Local
-   - RPC URL: http://127.0.0.1:8545
-   - Chain ID: 31337
-   - Currency Symbol: ETH
+    Network Name: Hardhat Local
+    RPC URL: http://127.0.0.1:8545
+    Chain ID: 31337
+    Currency Symbol: ETH
 
 3. Import one of the test accounts to MetaMask using private key from terminal output
 
@@ -99,11 +99,11 @@ This will give you 20 test accounts with 10000 ETH each.
 1. Make sure MetaMask is connected to Hardhat local network
 2. Click "Create Campaign" button
 3. Fill in:
-   - Campaign title
-   - Description 
-   - Funding goal (in ETH)
-   - Deadline
-   - Image URL
+    Campaign title
+    Description 
+    Funding goal (in ETH)
+    Deadline
+    Image URL
 4. Approve transaction in MetaMask
 5. Wait for confirmation - your campaign is live!
 
@@ -152,35 +152,35 @@ Simply open `frontend/index.html` in your browser or use live server.
 ### CrowdFunding.sol
 
 **createCampaign()**
-- Creates new fundraising campaign
-- Requires future deadline
-- Returns campaign ID
+ Creates new fundraising campaign
+ Requires future deadline
+ Returns campaign ID
 
 **donateToCampaign(id)**
-- Send ETH to specific campaign
-- Transfers funds to campaign owner
-- Mints reward tokens to donor
+ Send ETH to specific campaign
+ Transfers funds to campaign owner
+ Mints reward tokens to donor
 
 **getCampaigns()**
-- Returns all campaigns
-- Shows title, target, collected amount, deadline
+ Returns all campaigns
+ Shows title, target, collected amount, deadline
 
 **getDonators(id)**
-- Returns list of donors for specific campaign
-- Shows donation amounts
+ Returns list of donors for specific campaign
+ Shows donation amounts
 
 ### Reward_Tokens.sol
 
 **mint(address, amount)**
-- Creates new tokens
-- Only callable by CrowdFunding contract
-- Used automatically when donations happen
+ Creates new tokens
+ Only callable by CrowdFunding contract
+ Used automatically when donations happen
 
 Standard ERC-20 functions:
-- transfer()
-- balanceOf()
-- approve()
-- transferFrom()
+ transfer()
+ balanceOf()
+ approve()
+ transferFrom()
 
 
 
@@ -203,29 +203,29 @@ npx hardhat run scripts/deploy.js --network localhost
 
 
 **Note:** 
-- We primarily use local Hardhat network for this project
-- Never share your private key
-- Keep .env file in .gitignore
+ We primarily use local Hardhat network for this project
+ Never share your private key
+ Keep .env file in .gitignore
 
 ## Team Contributions
 
 **Nugmash Bigali:**
-- Smart contract development
-- Solidity coding
-- Contract deployment
-- Testing smart contracts
+ Smart contract development
+ Solidity coding
+ Contract deployment
+ Testing smart contracts
 
 **Tugelbayev Aidyn:**
-- Frontend development
-- HTML/CSS design
-- MetaMask integration
-- JavaScript for blockchain interaction
+ Frontend development
+ HTML/CSS design
+ MetaMask integration
+ JavaScript for blockchain interaction
 
 **Abdibay Asylbek:**
-- Testing and quality assurance
-- Writing test cases
-- Documentation
-- Integration testing
+ Testing and quality assurance
+ Writing test cases
+ Documentation
+ Integration testing
 
 ## Challenges We Faced
 
@@ -237,48 +237,48 @@ npx hardhat run scripts/deploy.js --network localhost
 
 ## What We Learned
 
-- How to write secure smart contracts using Solidity
-- ERC-20 token standard implementation
-- Setting up and using Hardhat local blockchain
-- Deploying and testing contracts locally
-- Frontend integration with blockchain
-- Writing proper tests for smart contracts
-- Working with MetaMask wallet and local networks
-- Git collaboration as a team
-- Debugging blockchain transactions
+ How to write secure smart contracts using Solidity
+ ERC-20 token standard implementation
+ Setting up and using Hardhat local blockchain
+ Deploying and testing contracts locally
+ Frontend integration with blockchain
+ Writing proper tests for smart contracts
+ Working with MetaMask wallet and local networks
+ Git collaboration as a team
+ Debugging blockchain transactions
 
 ## Future Improvements
 
 If we had more time, we would add:
-- Campaign finalization after deadline
-- Refund mechanism if goal not reached
-- Campaign categories and search
-- User profiles
-- Better UI/UX design
-- Mobile responsive design
+ Campaign finalization after deadline
+ Refund mechanism if goal not reached
+ Campaign categories and search
+ User profiles
+ Better UI/UX design
+ Mobile responsive design
 
 ## Security Notes
 
  **Important:**
-- This is educational project for learning purposes
-- Runs on local Hardhat network only
-- NOT audited - don't use in production
-- Test with local accounts only
-- Never expose private keys
+ This is educational project for learning purposes
+ Runs on local Hardhat network only
+ NOT audited - don't use in production
+ Test with local accounts only
+ Never expose private keys
 
 ## Resources We Used
 
-- Solidity Documentation: https://docs.soliditylang.org
-- OpenZeppelin Contracts: https://docs.openzeppelin.com/contracts
-- Hardhat Docs: https://hardhat.org/docs
-- Ethers.js Docs: https://docs.ethers.org
-- MetaMask Documentation: https://docs.metamask.io
-- YouTube tutorials 
+ Solidity Documentation: https://docs.soliditylang.org
+ OpenZeppelin Contracts: https://docs.openzeppelin.com/contracts
+ Hardhat Docs: https://hardhat.org/docs
+ Ethers.js Docs: https://docs.ethers.org
+ MetaMask Documentation: https://docs.metamask.io
+ YouTube tutorials 
 
 
 ## Contact
 
 If you have questions about our project:
-- GitHub Issues: https://github.com/bgl96395/Crowdfunding_Marketplace/issues
+ GitHub Issues: https://github.com/bgl96395/Crowdfunding_Marketplace/issues
 
 ---
